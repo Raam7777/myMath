@@ -400,20 +400,7 @@ public class Polynom implements Polynom_able{
 				sumUnder += this.f(xi);
 			}
 		}
-		return sumUnder*eps;
-	}
-
-	public double extremum(){
-		double y=0;
-		for (double x = -2.0; x < 6.0; x+=0.25) {
-			if(this.f(x)<this.f(x+0.25) && this.f(x)<this.f(x-0.25)){
-				return y=this.f(x);
-			}
-			else if(this.f(x)>this.f(x+0.25) && this.f(x)>this.f(x-0.25)){
-				return y=this.f(x);
-			}
-		}
-		return y; 
+		return Math.abs(sumUnder*eps);
 	}
 
 	/**
