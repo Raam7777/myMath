@@ -178,8 +178,8 @@ public class Polynom implements Polynom_able{
 				FoundPower = true;	
 				if(m2.get_coefficient()==0)
 					iterM.remove();
-			
-				
+
+
 			}
 		}
 		if(FoundPower==false && m1.get_power()>=0){
@@ -192,7 +192,7 @@ public class Polynom implements Polynom_able{
 			}
 			this.poly.sort(cmp);
 		}
-		
+
 	}
 
 	/**
@@ -375,14 +375,45 @@ public class Polynom implements Polynom_able{
 
 		int n = (int) ((x1-x0)/eps);
 
-		double sum = 0;
+		double sumUp = 0;
 		for(int i=1; i<=n; i++){
 			double xi = x0 + eps*(i-1);
 			if(f(xi)>=0){
-				sum += this.f(xi);
+				sumUp += this.f(xi);
 			}
 		}
-		return sum*eps;
+		return sumUp*eps;
+	}
+
+	public double areaUnder(double x0, double x1, double eps) {
+
+		if(f(x0)<0 && f(x1)<0){
+			throw new RuntimeException("Error: f(x) under to legate the x");
+		}
+
+		int n = (int) ((x1-x0)/eps);
+
+		double sumUnder = 0;
+		for(int i=1; i<=n; i++){
+			double xi = x0 + eps*(i-1);
+			if(f(xi)<0){
+				sumUnder += this.f(xi);
+			}
+		}
+		return sumUnder*eps;
+	}
+
+	public double extremum(){
+		double y=0;
+		for (double x = -2.0; x < 6.0; x+=0.25) {
+			if(this.f(x)<this.f(x+0.25) && this.f(x)<this.f(x-0.25)){
+				return y=this.f(x);
+			}
+			else if(this.f(x)>this.f(x+0.25) && this.f(x)>this.f(x-0.25)){
+				return y=this.f(x);
+			}
+		}
+		return y; 
 	}
 
 	/**
