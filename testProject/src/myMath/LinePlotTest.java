@@ -52,8 +52,8 @@ public class LinePlotTest extends JFrame {
         Color color2 = new Color(1.0f, 0.5f, 0.5f);
         plot.getPointRenderers(data2).get(0).setColor(color2);
         
-        System.out.println(p.area(-2, 6, 0.01));
-        System.out.println(p.areaUnder(-2, 6, 0.01));
+        System.out.println("Up : " + p.area(-2, 6, 0.01));
+        System.out.println("Under : " + p.areaUnder(-2, 6, 0.01));
     }
 
     public static void main(String[] args) {
