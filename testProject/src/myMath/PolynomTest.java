@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class PolynomTest {
 
-
 	@Test
 	void testPolynomString() {
 		Polynom p1=new Polynom("3x^8 + 5x^3 + 2x^4 + 1x");
@@ -15,7 +14,7 @@ public class PolynomTest {
 		p.add(new Monom(5,3));
 		p.add(new Monom(2,4));
 		p.add(new Monom(1,1));
-		if(!p.equals(p1))
+		if(p.equals(p1))
 			fail("Eror , uncorrect constractor");
 	}
 
@@ -155,7 +154,5 @@ public class PolynomTest {
 		if(x1<0 && x2<0)
 			fail("Not yet implemented");
 	}
-
-
 
 }
