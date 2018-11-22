@@ -7,15 +7,15 @@ import org.junit.Test;
 public class PolynomTest {
 
 	@Test
-	void testPolynomString() {
+	void testPolynomString(){
 		Polynom p1=new Polynom("3x^8 + 5x^3 + 2x^4 + 1x");
 		Polynom p=new Polynom();
 		p.add(new Monom(3,8));
 		p.add(new Monom(5,3));
 		p.add(new Monom(2,4));
 		p.add(new Monom(1,1));
-		if(p.equals(p1))
-			fail("Eror , uncorrect constractor");
+		if(!p.equals(p1))
+			fail("Error , constractor not correct ");
 	}
 
 	@Test
@@ -106,7 +106,7 @@ public class PolynomTest {
 		p2.add(new Monom(2,2));
 		p2.add(new Monom(2,1));
 		if(!p1.equals(p2))
-			fail("Eror , equal function not working");
+			fail("Error , equal function not working");
 	}
 
 	@Test
@@ -124,7 +124,7 @@ public class PolynomTest {
 		double e=0.01;
 		double root=p1.root(0, 100, e);
 		if(Math.abs(p1.f(root))>=e)
-			fail("Error , uncorrect Root");
+			fail("Error , Root not correct ");
 	}
 
 	@Test
@@ -136,7 +136,7 @@ public class PolynomTest {
 		p1.add(new Monom(4,1));
 		p1.add(new Monom(2,0));
 		if(!p.derivative().equals(p1))
-			fail("Eror , uncorrect Derivative");
+			fail("Error , Derivative not correct ");
 	}
 
 	@Test
