@@ -387,9 +387,6 @@ public class Polynom implements Polynom_able{
 
 	public double areaUnder(double x0, double x1, double eps) {
 
-		if(f(x0)<0 && f(x1)<0){
-			throw new RuntimeException("Error: f(x) under to legate the x");
-		}
 
 		int n = (int) ((x1-x0)/eps);
 
