@@ -260,6 +260,12 @@ public class TestPolynom {
 		String s = "5x^6 + 3x^2 + 5x + 6";
 		
 		Polynom p = new Polynom(s);
+		Polynom p1 = new Polynom();
+		p1.add(new Monom(5,6));
+		p1.add(new Monom(3,2));
+		p1.add(new Monom(5,1));
+		p1.add(new Monom(6,0));
 		System.out.println("p = s = " + p);
+		System.out.println("if p equals p1 = " + p.equals(p1));
 	}
 }
