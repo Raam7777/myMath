@@ -374,6 +374,9 @@ public class Polynom implements Polynom_able{
 		}
 
 		int n = (int) ((x1-x0)/eps);
+		if(n<0){
+			throw new RuntimeException("Error: the lower limit should be less than the upper limit");
+		}
 
 		double sumUp = 0;
 		for(int i=1; i<=n; i++){
@@ -392,6 +395,9 @@ public class Polynom implements Polynom_able{
 		}
 
 		int n = (int) ((x1-x0)/eps);
+		if(n<0){
+			throw new RuntimeException("Error: the lower limit should be less than the upper limit");
+		}
 
 		double sumUnder = 0;
 		for(int i=1; i<=n; i++){
